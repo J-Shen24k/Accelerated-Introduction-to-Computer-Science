@@ -1,0 +1,94 @@
+The output file name is "qwer.txt".
+
+
+Some example of output file(create a path):
+	1. From Howard to Ashland/63rd:  Howard RED Jarvis RED Morse RED Loyola RED Granville RED Thorndale RED Bryn Mawr RED Berwyn RED Argyle RED Lawrence RED Wilson RED Sheridan RED Addison RED Belmont RED Belmont BROWN Southport BROWN Paulina BROWN Addison BROWN Irving Park BROWN Montrose BROWN Damen BROWN Western BROWN Rockwell BROWN Francisco BROWN Kedzie BROWN Kimball BROWN 0O`Hare BLUE Rosemont BLUE Cumberland BLUE Harlem BLUE Jefferson Park BLUE Montrose BLUE Irving Park BLUE Addison BLUE Belmont BLUE Logan Square BLUE California BLUE Western BLUE Damen BLUE Division BLUE Chicago BLUE Grand BLUE Clark/Lake BLUE Washington BLUE Monroe BLUE Jackson BLUE LaSalle BLUE Clinton BLUE UIC-Halsted BLUE Racine BLUE Illinois Medical District BLUE Western BLUE Kedzie-Homan BLUE Pulaski BLUE Cicero BLUE Austin BLUE OakPark BLUE Harlem/lake BLUE Harlem/lake GREEN OakPark GREEN Ridgeland GREEN Austin GREEN Central GREEN Laramie GREEN Cicero GREEN Pulaski GREEN Conservatory-Central Park Drive GREEN Kenzie GREEN California GREEN Ashland GREEN Morgan GREEN Clinton GREEN Clark/Lake GREEN State/Lake GREEN Washington/Wabash GREEN Adams/Wabash GREEN Roosevelt GREEN Cermak-McCormick GREEN 35th-Bronzeville-IIT GREEN Indiana GREEN 43rd GREEN 47th GREEN 51st GREEN Garfield GREEN Halsted GREEN Ashland/63rd GREEN 
+	2. From 95th/danryan to clark/lake:  95th/DanRyan RED 87th RED 79th RED 69th RED 63rd RED Garfield RED 47th RED Sox-35th RED Cermak-Chinatown RED Roosevelt RED Roosevelt GREEN Adams/Wabash GREEN Washington/Wabash GREEN State/Lake GREEN Clark/Lake GREEN 
+	3. From harlem/lake to ashland/63rd:  Harlem/lake GREEN OakPark GREEN Ridgeland GREEN Austin GREEN Central GREEN Laramie GREEN Cicero GREEN Pulaski GREEN Conservatory-Central Park Drive GREEN Kenzie GREEN California GREEN Ashland GREEN Morgan GREEN Clinton GREEN Clark/Lake GREEN State/Lake GREEN Washington/Wabash GREEN Adams/Wabash GREEN Roosevelt GREEN Cermak-McCormick GREEN 35th-Bronzeville-IIT GREEN Indiana GREEN 43rd GREEN 47th GREEN 51st GREEN Garfield GREEN Halsted GREEN Ashland/63rd GREEN 
+	4. From kimball to quincy:  Kimball BROWN Kedzie BROWN Francisco BROWN Rockwell BROWN Western BROWN Damen BROWN Montrose BROWN Irving Park BROWN Addison BROWN Paulina BROWN Southport BROWN Belmont BROWN Wellington BROWN Diversey BROWN Fullerton BROWN Armitage BROWN Sedgwick BROWN Chicago BROWN MerchandiseMart BROWN Washington/Wells BROWN Quincy BROWN Both of them are on brown line.
+	5. From O`hare to 97th:  O`Hare BLUE Rosemont BLUE Cumberland BLUE Harlem BLUE Jefferson Park BLUE Montrose BLUE Irving Park BLUE Addison BLUE Belmont BLUE Logan Square BLUE California BLUE Western BLUE Damen BLUE Division BLUE Chicago BLUE Grand BLUE Clark/Lake BLUE Washington BLUE Monroe BLUE Jackson BLUE Jackson RED Harrison RED Roosevelt RED Cermak-Chinatown RED Sox-35th RED 47th RED Garfield RED 63rd RED 69th RED 79th RED 87th RED
+
+
+
+
+test plan:
+Test No1: Read file function works or not.
+	Expected: Read the file successfully.
+	Actual outcome: It can read file.
+	Pass/Fail: Pass.
+	Note: Using "catch", if there do not have the file which we want to read, the program will show "The file is not found" by 
+		  FileNotFoundException e.
+	
+	
+	Test No2: Add function works or not.
+	Expected: Add the new station successfully.
+	Actual outcome: It adds new station successfully.
+	Pass/Fail: Pass.
+	Note: Using "catch" to prevent if users don not follow the instructions, the program will be broken. InputMismatchException e and Exception e
+		  will protect the errors from users' inputing.
+		  
+		  
+	Test No3: Modify function works or not.
+	Expected: Insert the new data in the right place successfully.
+	Actual outcome: Data are inserted successfully at specific place.
+	Pass/Fail: Pass.
+	Note: Using "catch" to prevent if users don not follow the instructions, the program will be broken. InputMismatchException e and Exception e
+		  will protect the errors from users' inputing.
+		  
+		  
+	Test No4: Remove function works or not.
+	Expected: Remove the station successfully.
+	Actual outcome: It removes station successfully.
+	Pass/Fail: Pass.
+	Note: When user inputs the station which they want to delete in the ArrayList, then the ArrayList will remove all the data about that station.
+	
+	
+	Test No5: Search specific station name:
+	Expected: Get the specific station information.
+	Actual outcome: It gets all the information about the specific station name.
+	Pass/Fail: Pass.
+	
+	
+	Test No6: Find the nearest station.
+	Expected: Get the nearest station and distance successfully.
+	Actual outcome: It can get the nearest station name and distance.
+	Pass/Fail: Pass.
+	Note: Using "catch" to prevent if users do not follow the instructions, the program will be broken. "NumberFormatException e" prevents the format
+		of the users' input does not follow the instructions. If the program asks user to input lat first and input lng at the second time but the users
+		input letters or lat and lng at the same time. In this case, the program will show errors. But "NumberFormatException e" will solve this problem and 
+		give a hint for user to tell them the input errors.
+	
+	
+	Test No7: Show the route from one station to the other.
+	Expected: Get the statement about route successfully;
+	Actual outcome: It gets the statement about route.
+	Pass/Fail: Pass.
+	Note: Must be careful about handle the station which are transfer stations.
+	
+	
+	Test No8: Display station names
+	Expected: Get all the station names.
+	Actual outcome: It can get all the station names.
+	Pass/Fail: Pass.
+	
+	
+	Test No9: Display the stations with wheelchair or not.
+	Expected: 1. Get the stations with the wheelchairs successfully. 2. Get the stations without the wheelchairs successfully.
+	Actual outcome: 1. It can get the stations with the wheelchairs. 2. It can the stations without the wheelchairs.
+	Pass/Fail: Pass.
+	Note: Using a "while" loop prevent the users to enter things expect "y" or "n". If the users do not follow the instructions, the program will show a hint "Invalid input,
+	try again." It will keep running until users input "y" or "n".
+	
+	
+	Test No10: Display all the information of all the stations.
+	Expected: Get all the information successfully.
+	Actual outcome: It can show all the information.
+
+
+	Test No11: Menu choices.
+	Expected: Program will show the menu until the user choose one of the functions successfully.
+	Actual outcome: Program show the menu until the user choose one of the functions.
+	Pass/Fail: Pass.
+	Note: The while loop will keep running until the users choose one of the functions in the menu. It prevents user enter other things which breaks the program except functions.
+	
+	

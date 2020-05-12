@@ -1,0 +1,137 @@
+Interface:
+	1. Please enter the name of station which you want to create ( or add): 
+	2. Please enter the name of station which you want to modify: 
+	3. Please enter the name of station which you want to remove: 
+	4. Please enter the name of station which you want to search:
+	5. Please enter your current location to find the nearest station and use "," to separate the latitude and longitude:
+	6. Show the route from a station to another: 
+	7. Display station names:
+	8. Display stations with wheelchair access or not:
+	9. Display all the information of stations: 
+	10. Exit.
+	
+	
+Task:
+	This program states that the CTA basic system theory. According to the requirements of users, the program give 
+	the result which the users need. All the function which the system has are based on interface(menu).
+	
+	
+Describe how you will read the input,describe how you will process the data from the input file and describe how you will store the data.
+	I will plan to use scanner class. For example, I used "sc = new Scanner(new File("src/labs/lab6/CTAStops.csv"))" in Lab6. I think I will do the same things in final project. Then using a while 
+	loop to read all the data. It will stop until there is no next line. I will use the "try catch" at the same time. Inside the catch blocks, we put the code used to handle a thrown exception.
+	Because we reading data by line and line. There are different types of data in the same line so we need to create a new ArrayList and use "split" to separate each data which need to be the same 
+	as the constructor in CTAStation. Then using the function add to add the data in the ArrayList.
+
+
+How will you add/delete/modify data:
+	I will use "try-catch in all of three. As I mentioned before, Inside the catch blocks, we put the code used to handle a thrown exception. The "add" function and "modify" function are kind of similar.
+	Inside "try" asking user to follow the instructions and input the information about the new station which they want to add. Also using "," to separate each data. Next, putting all the data in the 
+	ArrayList. The difference between modify and add is "index". Because the users want the new data to add the specific position which they want to. Except for asking user to input the basic information 
+	, the program also need to ask users where the users want to put the new data. For example, the users want to put the information at the first one. The program should give a result that the information 
+	should show in the first position when system prints out the whole information.
+
+	The first thing to do is asking users "Please enter the name of station which you want to delete:". Using for loop to search all the information in the ArrayList. If input equals one of the station names,
+	then we will use "remove" function to delete the information about the input.
+
+
+Classes: List of names and descriptions:
+	public void readFile() : Read the data in the file.
+	public void addStation() : Add the new data.
+	public void insertStation(): Insert the new data to the specific position.
+	public void removeStation(): Remove the specific data we have right now.
+	public void Search(): Search the specific station name.
+	public void displayNeareststation(): Find the nearest station by inputing the location right now.
+	public void showPath(): Find the way between two stations.
+	public void displayStationNames(): Show all the names of stations.
+	public void displayByWheelchair() : Show the stations have wheelchairs or do not have wheelchairs.
+	public void displayAllinformation(): Show all the information in the system.
+	
+	
+Testing plan:
+
+	
+	Test No1: Read file function works or not.
+	Expected: Read the file successfully.
+	Actual outcome: It can read file.
+	Pass/Fail: Pass.
+	Note: Using "catch", if there do not have the file which we want to read, the program will show "The file is not found" by 
+		  FileNotFoundException e.
+	
+	
+	Test No2: Add function works or not.
+	Expected: Add the new station successfully.
+	Actual outcome: It adds new station successfully.
+	Pass/Fail: Pass.
+	Note: Using "catch" to prevent if users don not follow the instructions, the program will be broken. InputMismatchException e and Exception e
+		  will protect the errors from users' inputing.
+		  
+		  
+	Test No3: Modify function works or not.
+	Expected: Insert the new data in the right place successfully.
+	Actual outcome: Data are inserted successfully at specific place.
+	Pass/Fail: Pass.
+	Note: Using "catch" to prevent if users don not follow the instructions, the program will be broken. InputMismatchException e and Exception e
+		  will protect the errors from users' inputing.
+		  
+		  
+	Test No4: Remove function works or not.
+	Expected: Remove the station successfully.
+	Actual outcome: It removes station successfully.
+	Pass/Fail: Pass.
+	Note: When user inputs the station which they want to delete in the ArrayList, then the ArrayList will remove all the data about that station.
+	
+	
+	Test No5: Search specific station name:
+	Expected: Get the specific station information.
+	Actual outcome: It gets all the information about the specific station name.
+	Pass/Fail: Pass.
+	
+	
+	Test No6: Find the nearest station.
+	Expected: Get the nearest station and distance successfully.
+	Actual outcome: It can get the nearest station name and distance.
+	Pass/Fail: Pass.
+	Note: Using "catch" to prevent if users do not follow the instructions, the program will be broken. "NumberFormatException e" prevents the format
+		of the users' input does not follow the instructions. If the program asks user to input lat first and input lng at the second time but the users
+		input letters or lat and lng at the same time. In this case, the program will show errors. But "NumberFormatException e" will solve this problem and 
+		give a hint for user to tell them the input errors.
+	
+	
+	Test No7: Show the route from one station to the other.
+	Expected: Get the statement about route successfully;
+	Actual outcome: It gets the statement about route.
+	Pass/Fail: Pass.
+	Note: Must be careful about handle the station which are transfer stations.
+	
+	
+	Test No8: Display station names
+	Expected: Get all the station names.
+	Actual outcome: It can get all the station names.
+	Pass/Fail: Pass.
+	
+	
+	Test No9: Display the stations with wheelchair or not.
+	Expected: 1. Get the stations with the wheelchairs successfully. 2. Get the stations without the wheelchairs successfully.
+	Actual outcome: 1. It can get the stations with the wheelchairs. 2. It can the stations without the wheelchairs.
+	Pass/Fail: Pass.
+	Note: Using a "while" loop prevent the users to enter things expect "y" or "n". If the users do not follow the instructions, the program will show a hint "Invalid input,
+	try again." It will keep running until users input "y" or "n".
+	
+	
+	Test No10: Display all the information of all the stations.
+	Expected: Get all the information successfully.
+	Actual outcome: It can show all the information.
+
+
+	Test No11: Menu choices.
+	Expected: Program will show the menu until the user choose one of the functions successfully.
+	Actual outcome: Program show the menu until the user choose one of the functions.
+	Pass/Fail: Pass.
+	Note: The while loop will keep running until the users choose one of the functions in the menu. It prevents user enter other things which breaks the program except functions.
+	
+	
+	
+	
+	
+
+		
